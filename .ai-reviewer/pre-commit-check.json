@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-29T20:24:23.779Z",
+  "timestamp": "2026-06-29T20:39:57.346Z",
   "functions": [
     {
-      "name": "calculateDiscount",
+      "name": "processUserData",
       "file": "src\\userService.ts",
-      "score": 8
+      "score": 5
     }
   ],
-  "minScore": 8,
+  "minScore": 5,
   "blocked": false
 }
