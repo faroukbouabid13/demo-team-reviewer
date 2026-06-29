@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-29T20:39:57.346Z",
+  "timestamp": "2026-06-29T20:46:24.230Z",
   "functions": [
     {
       "name": "processUserData",
       "file": "src\\userService.ts",
-      "score": 5
+      "score": 4
     }
   ],
-  "minScore": 5,
-  "blocked": false
+  "minScore": 4,
+  "blocked": true
 }
