@@ -1,0 +1,10 @@
+{"timestamp":"2026-06-29T12:53:21.496Z","functionName":"updateUser","file":"src\\userService.ts","score":4}
+{"timestamp":"2026-06-29T13:00:03.790Z","functionName":"updateUser","file":"src\\userService.ts","score":4}
+{"timestamp":"2026-06-29T18:37:44.258Z","functionName":"updateUser","file":"src\\userService.ts","score":3}
+{"timestamp":"2026-06-29T18:42:28.422Z","functionName":"calculateDiscount","file":"src\\userService.ts","score":8}
+{"timestamp":"2026-06-29T18:54:59.989Z","functionName":"calculateDiscount","file":"src\\userService.ts","score":7}
+{"timestamp":"2026-06-29T19:24:48.219Z","functionName":"calculateDiscount","file":"src\\userService.ts","score":7}
+{"timestamp":"2026-06-29T19:52:00.179Z","functionName":"calculateDiscount","file":"src\\userService.ts","score":8}
+{"timestamp":"2026-06-29T20:24:23.778Z","functionName":"calculateDiscount","file":"src\\userService.ts","score":8}
+{"timestamp":"2026-06-29T20:39:57.346Z","functionName":"processUserData","file":"src\\userService.ts","score":5}
+{"timestamp":"2026-06-29T20:46:24.230Z","functionName":"processUserData","file":"src\\userService.ts","score":4}

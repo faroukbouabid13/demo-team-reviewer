@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-06-29T20:46:24.230Z",
+  "functions": [
+    {
+      "name": "processUserData",
+      "file": "src\\userService.ts",
+      "score": 4
+    }
+  ],
+  "minScore": 4,
+  "blocked": true
+}
