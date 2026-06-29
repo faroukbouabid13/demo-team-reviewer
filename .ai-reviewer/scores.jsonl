@@ -1,0 +1,5 @@
+{"timestamp":"2026-06-29T12:17:29.275Z","functionName":"updateUser","file":"src\\userService.ts","score":4}
+{"timestamp":"2026-06-29T12:19:46.254Z","functionName":"fetchFromDB","file":"src\\userService.ts","score":6}
+{"timestamp":"2026-06-29T12:26:59.513Z","functionName":"updateUser","file":"src\\userService.ts","score":4}
+{"timestamp":"2026-06-29T12:29:14.701Z","functionName":"fetchFromDB","file":"src\\userService.ts","score":7}
+{"timestamp":"2026-06-29T12:37:47.066Z","functionName":"updateUser","file":"src\\userService.ts","score":4}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-06-29T12:37:47.067Z",
+  "functions": [
+    {
+      "name": "updateUser",
+      "file": "src\\userService.ts",
+      "score": 4
+    }
+  ],
+  "minScore": 4,
+  "blocked": true
+}
