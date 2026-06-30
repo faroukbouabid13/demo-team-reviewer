@@ -1,36 +1,27 @@
-import * as fs from "fs";
-import * as path from "path";
+export function warmCache(keys: string[], fetchFn: (key: string) => any, ttlSeconds: number) {
+  let warmed  = 0;
+  let skipped = 0;
+  let failed  = 0;
 
-export function processUserData(userId: string, configPath: string) {
-  const raw = fs.readFileSync(configPath, "utf-8");
-  const config = JSON.parse(raw);
-
-  const query = `SELECT * FROM users WHERE id = '${userId}'`;
-  console.log("Running query:", query);
-
-  let result: any[] = [];
-  for (let i = 0; i < config.sources.length; i++) {
-    const source = config.sources[i];
-    if (source.enabled) {
-      if (source.type === "db") {
-        if (source.data) {
-          for (let j = 0; j < source.data.length; j++) {
-            if (source.data[j].userId == userId) {
-              result.push(source.data[j]);
-            }
-          }
-        }
-      }
+  for (let i = 0; i < keys.length; i++) {
+    const existing = cacheStore.get(keys[i]);
+    if (existing && existing.expiresAt > Date.now()) {
+      skipped++;
+      continue;
+    }
+    const value = fetchFn(keys[i]);
+    if (value !== null && value !== undefined) {
+      cacheStore.set(keys[i], {
+        key: keys[i],
+        value,
+        expiresAt: Date.now() + ttlSeconds * 1000,
+        hits: 0,
+      });
+      warmed++;
+    } else {
+      failed++;
     }
   }
 
-  var output = "";
-  for (let i = 0; i < result.length; i++) {
-    output += "<div>" + result[i].name + "</div>";
-  }
-
-  const outFile = path.join(configPath, "../output.json");
-  fs.writeFileSync(outFile, JSON.stringify(result));
-
-  return output;
+  return { warmed, skipped, failed, total: keys.length, successRate: warmed / keys.length };
 }
