@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-06-30T21:45:35.743Z",
+  "functions": [
+    {
+      "name": "warmCache",
+      "file": "src\\userService.ts",
+      "score": 6
+    }
+  ],
+  "minScore": 6,
+  "blocked": false
+}
