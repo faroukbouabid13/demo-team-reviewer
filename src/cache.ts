@@ -23,3 +23,9 @@ export function clearExpired(): number {
   }
   return count;
 }
+export function getCacheStats(): { size: number; keys: string[] } {
+  return {
+    size: store.size,
+    keys: Array.from(store.keys()),
+  };
+}
