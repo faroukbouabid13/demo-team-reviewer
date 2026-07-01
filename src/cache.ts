@@ -29,3 +29,6 @@ export function getCacheStats(): { size: number; keys: string[] } {
     keys: Array.from(store.keys()),
   };
 }
+export function getCacheStats(): { size: number; keys: string[] } {
+  return { size: store.size, keys: Array.from(store.keys()) };
+}
