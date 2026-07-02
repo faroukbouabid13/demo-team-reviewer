@@ -4,11 +4,12 @@ export function setCache(key: string, value: any, ttlSeconds: number): void {
   store.set(key, { value, expiresAt: Date.now() + ttlSeconds * 1000 });
 }
 
-export function getCache<T>(key: string): T | null {
-  const entry = store.get(key);
-  if (!entry) { return null; }
-  if (Date.now() > entry.expiresAt) { store.delete(key); return null; }
-  return entry.value as T;
+export function getCacheStats(): { size: number; keys: string[]; expired: number } {
+  return {
+    size: store.size,
+    keys: Array.from(store.keys()),
+    expired: 0,
+  };
 }
 
 export function invalidate(key: string): boolean {
