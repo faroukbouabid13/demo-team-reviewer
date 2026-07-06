@@ -24,9 +24,10 @@ export function clearExpired(): number {
   }
   return count;
 }
-export function getCacheStats(): { size: number; keys: string[] } {
+export function getCacheStats(): { size: number; keys: string[]; expired: number } {
   return {
     size: store.size,
     keys: Array.from(store.keys()),
+    expired: 0,
   };
 }
