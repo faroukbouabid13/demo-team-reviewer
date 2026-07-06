@@ -23,3 +23,6 @@ export function getCacheStats(): { size: number; keys: string[]; expired: number
     expired: 0,
   };
 }
+export function getCacheStats(): { size: number; keys: string[] } {
+  return { size: store.size, keys: Array.from(store.keys()) };
+}
