@@ -5,9 +5,7 @@ export function setCache(key: string, value: any, ttlSeconds: number): void {
 }
 
 
-export function invalidate(key: string): boolean {
-  return store.delete(key);
-}
+
 
 export function clearExpired(): number {
   const now = Date.now();
