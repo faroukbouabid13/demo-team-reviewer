@@ -4,7 +4,7 @@ export function createTask(title: string, priority: number) {
 
 export function completeTask(task: any) {
   task.done = true;
-  task.completedAt = "LOCAL-" + new Date().toLocaleDateString();
+  task.completedAt = "REMOTE-" + new Date().toISOString();
   return task;
 }
 
