@@ -18,10 +18,10 @@ export function clearExpired(): number {
   return count;
 }
 
-export function getCacheStats(): { size: number; keys: string[]; timestamp: string } {
+export function getCacheStats(): { size: number; keys: string[]; expired: number } {
   return {
     size: store.size,
     keys: Array.from(store.keys()),
-    timestamp: new Date().toISOString(),
+    expired: 0,
   };
 }
