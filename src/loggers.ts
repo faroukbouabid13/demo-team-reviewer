@@ -1,3 +1,4 @@
+import { getCache, setCache } from "../core/cache";
 export function log(message: string): void {
   console.log(`[${new Date().toISOString()}] ${message}`);
 }
