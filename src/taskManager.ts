@@ -4,6 +4,7 @@ export function createTask(title: string, priority: number) {
 
 export function completeTask(task: any) {
   task.done = true;
+<<<<<<< HEAD
   task.completedAt = new Date().toISOString();
   task.updatedBy = "system";
   return task;
