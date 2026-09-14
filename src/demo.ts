@@ -1,21 +1,37 @@
-export async function deleteUser(userId: string) {
+import { db } from "./database";
+
+interface User {
+  id:    string;
+  name:  string;
+  email: string;
+  role:  string;
+}
+
+/**
+ * Retrieves a user by their ID.
+ * @param userId - The unique identifier of the user
+ * @returns The user object, or null if not found
+ */
+export async function getUserById(userId: string): Promise<User | null> {
+  if (!userId) { return null; }
+
   try {
-    const result = await db.query(
-      "DELETE FROM users WHERE id = $1",
+    const result = await db.query<User>(
+      "SELECT id, name, email, role FROM users WHERE id = $1",
       [userId]
     );
-    return result.rowCount > 0;
+
+    const user = result.rows[0];
+    if (!user) { return null; }
+
+    return {
+      id:    user.id,
+      name:  user.name,
+      email: user.email,
+      role:  user.role,
+    };
   } catch (err) {
-    console.error("[deleteUser] error:", err);
-    throw err;
-  }
-}
-export async function listUsers(): Promise<User[]> {
-  try {
-    const result = await db.query("SELECT * FROM users ORDER BY created_at DESC");
-    return result.rows ?? [];
-  } catch (err) {
-    console.error("[listUsers] error:", err);
+    console.error("[getUserById] database error:", err);
     throw err;
   }
 }
