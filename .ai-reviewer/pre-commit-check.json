@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-30T21:45:35.743Z",
+  "timestamp": "2026-09-14T19:44:51.059Z",
   "functions": [
     {
-      "name": "warmCache",
-      "file": "src\\userService.ts",
-      "score": 6
+      "name": "getUserById",
+      "file": "src\\demo.ts",
+      "score": 8
     }
   ],
-  "minScore": 6,
+  "minScore": 8,
   "blocked": false
 }
